@@ -6,10 +6,17 @@ div.style.top = `${divY}px`;
 
 let moveActive = false;
 
-div.addEventListener("mousedown", () => {
+let insertDivX;
+let insertDivY;
+
+div.addEventListener("mousedown", (e) => {
     console.log("mousedown");
     div.style.backgroundColor = `grey`;
     moveActive = !moveActive;
+
+    insertDivX = e.offsetX;
+    insertDivY = e.offsetY;
+    console.log(insertDivX, insertDivY)
 });
 div.addEventListener("mousemove", (e) => {
     console.log("mousemove");
@@ -22,6 +29,6 @@ div.addEventListener("mousemove", (e) => {
 });
 div.addEventListener("mouseup", () => {
     console.log("mouseup");
-    div.style.backgroundColor = `darkorange`;
+    div.style.backgroundColor = "darkorange";
     moveActive = !moveActive;
 });
